@@ -1,0 +1,43 @@
+<div class='container'>
+  <div class='sub-container'>
+    <h2>Hay <span>{{equipos.length}}</span> equipos</h2>
+    <a href="/equipo/crear"><button class='boton-agregar'>Agregar</button></a>
+  </div>
+  <table class='tabla-estilos'>
+      <thead>
+          <tr>
+              <th>Equipo</th>
+              <th>Pais</th>
+              <th>Accion</th>
+          </tr>
+      </thead>
+      <tbody>
+          {{#each equipos}}
+            <tr>
+              <td>{{this.name}}</td>
+              <td>{{this.area.name}}</td>
+              <td><a class='botones' href="/equipo/{{this.id}}/ver">Ver</a><a class='borrar' data-doc={{this.id}}>Borrar</a></td>
+            </tr>
+          {{/each}}
+      </tbody>
+  </table>
+</div>
+<script>
+  const botones = document.querySelectorAll('a.borrar');
+  botones.forEach((boton) => {
+    boton.addEventListener('click', (e) => {
+    const endpoint = `/equipo/${boton.dataset.doc}`
+    fetch(endpoint, {
+      method: 'DELETE',
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
+    .then((response) => response.json())
+    .then((data) => window.location.href = data.redirect)
+    })
+  })
+  
+
+</script>

@@ -1,0 +1,13 @@
+<div class='contenedor'>
+  <div class='card'>
+    <h2>Crear equipo</h2>
+    <form action="/equipo/crear" method="POST" enctype="multipart/form-data">
+      <input type="text" name='name' placeholder="River plate" required />
+      <input type="text" name='country' placeholder="Argentina" required />
+      <input type="text" name='tla' placeholder="CARP" required />
+      <input type="text" name='colores' placeholder="Blanco / rojo" required />
+      <input class='boton-archivo' type="file" name="imagen" />
+      <input class='boton-subir' type="submit" value="Subir" />
+    </form>
+  </div>
+</div>

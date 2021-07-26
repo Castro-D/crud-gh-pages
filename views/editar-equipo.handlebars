@@ -1,0 +1,13 @@
+<div class='contenedor'>
+  <div class='card'>
+    <h2>Editar equipo</h2>
+    <form action="/equipo/{{equipo.id}}/editar?_method=PUT" method="POST" enctype="multipart/form-data">
+      <input type="text" name='name' value='{{equipo.name}}' placeholder="Nombre" required /> 
+      <input type="text" name='country' value='{{equipo.area.name}}' placeholder="Pais" required />
+      <input type="text" name='tla' value='{{equipo.tla}}' placeholder="Siglas" required />
+      <input type="text" name='colores' value='{{equipo.clubColors}}' placeholder="Colores" required />
+      <input class='boton-archivo' type="file" name="imagen" />
+      <input class='boton-subir' type="submit" value="Subir" />
+    </form>
+  </div>
+</div>
