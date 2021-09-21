@@ -33,7 +33,7 @@ const upload = multer({
   filtroArchivo,
 });
 const app = express();
-const PUERTO = 8080;
+const PUERTO = 3000;
 
 app.set('view engine', 'handlebars');
 app.engine('handlebars', handlebars({
